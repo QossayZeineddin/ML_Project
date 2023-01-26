@@ -7,6 +7,7 @@ import matplotlib.pyplot as plot
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
 
 # read the data
 X_train, y_train = mnist_reader.load_mnist('data/fashion', kind='train')
@@ -82,7 +83,7 @@ plot.show()
 # , small C give high bias and low variance.
 
 # Create an SVM classifier with a linear kernel
-clf = SVC(kernel='sigmoid', C=2)
+clf = SVC(kernel='linear', C=1)
 
 #          linear      poly      rbf        sigmoid
 # c = 1   0.85166
@@ -91,13 +92,39 @@ clf = SVC(kernel='sigmoid', C=2)
 #
 
 # Train the classifier on the training data
+
 clf.fit(X_train_norm, y_train)
 
 # Test the classifier on the testing data
-# accuracy = clf.score(X_test, y_test)
-# print("Accuracy:", accuracy)
-
-
 predict_set = clf.predict(X_val_norm)
-acc = accuracy_score(predict_set, y_val)
+acc = accuracy_score(predict_set, y_test)
 print("Accuracy: ", acc)
+
+
+
+
+
+# ========================================================================
+# =========================***** Random Forest  *****===============================
+# ========================================================================
+
+
+
+# Define the Random Forest model
+# clf = RandomForestClassifier(n_estimators=20)
+#
+# # n = 100   0.881313131
+# # n = 10    0.85207
+#
+#
+# # Fit the model to the training data
+# clf.fit(X_train_norm, y_train)
+#
+# # Make predictions on the test set
+# predict_set = clf.predict(X_test)
+# acc = accuracy_score(predict_set, y_test)
+# print("Accuracy: ", acc)
+#
+#
+#
+
