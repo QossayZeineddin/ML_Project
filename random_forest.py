@@ -29,7 +29,6 @@ X_test_norm = scaler.transform(X_test_reshaped)
 # ========================================================================
 
 
-
 # Define the Random Forest model
 clf = RandomForestClassifier(n_estimators=20)
 
