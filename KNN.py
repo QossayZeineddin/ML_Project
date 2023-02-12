@@ -39,11 +39,11 @@ X_test_norm = scaler.transform(X_test_reshaped)
 # Accuracy:  0.8488888888888889    K = 1 manhattan
 
 
-#            manhattan              euclidean           cosine         sqeuclidean     squareform   braycurtis
-#
-# k = 1     0.8523232                0.8452020          0.85257
-#
-# k = 3     0.855303                 0.846868686        0.85333                                     0.844393939
+# Test the classifier on the validation data to tune hyper parameter
+# choose the maximum k=3 with manhattan distance
+#            manhattan      Euclidean     cosine      braycurtis
+#k=1          0.84444        0.84242      0.85257     0.84313
+#k=3          0.85843        0.84812      0.85333     0.84646
 
 
 #Base Model and part 4.  Improvements  still working here
